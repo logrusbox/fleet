@@ -1,0 +1,18 @@
+name: Quick capture
+about: Capture a cross-product idea or coordination item before full triage
+labels: []
+body:
+  - type: textarea
+    id: note
+    attributes:
+      label: Capture
+      description: Record the idea, problem, dependency, or follow-up. Keep it short; it can be triaged later.
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: This appears to require both Vincent and CIC Station or applies at program level.
+          required: false
