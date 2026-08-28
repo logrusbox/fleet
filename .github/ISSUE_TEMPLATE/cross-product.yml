@@ -1,0 +1,36 @@
+name: Cross-product work
+about: Work whose acceptance requires coordinated Vincent and CIC Station changes or proof
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this repository only for work that genuinely spans both products. Product-specific work belongs in its product repository.
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Program outcome
+      description: What cross-product behavior or result must be achieved?
+    validations:
+      required: true
+  - type: textarea
+    id: vincent
+    attributes:
+      label: Vincent dependency
+      description: Link or describe the authoritative Vincent issue/PR/requirement involved.
+    validations:
+      required: false
+  - type: textarea
+    id: cic
+    attributes:
+      label: CIC Station dependency
+      description: Link or describe the authoritative CIC Station issue/PR/requirement involved.
+    validations:
+      required: false
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Cross-product acceptance
+      description: What evidence proves the coordinated result is complete?
+    validations:
+      required: true
