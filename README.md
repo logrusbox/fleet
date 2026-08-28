@@ -1,27 +1,29 @@
-# VINCENT Program
+# Fleet
 
-`logrusbox/vincent-program` is the program-level coordination repository for the VINCENT product family maintained by Logrus Box.
+`logrusbox/fleet` is the program-level coordination repository for **Fleet**, a Logrus Box product for coordinating AI work across managed computers.
 
-It exists to hold only information that genuinely spans more than one product repository or governs the product family as a whole.
+Fleet currently consists of two programs:
 
-## Product repositories
+- [`logrusbox/vincent`](https://github.com/logrusbox/vincent) — **Vincent**, the managed worker platform.
+- [`logrusbox/cic-station`](https://github.com/logrusbox/cic-station) — **CIC Station**, the Command Information Center and central control plane.
 
-- [`logrusbox/vincent`](https://github.com/logrusbox/vincent) — Vincent worker platform: installer, runtime, diagnostics, updates, provider adapters, worker-side protocols, tests, requirements, ADRs, product roadmap, issues, and releases.
-- [`logrusbox/cic-station`](https://github.com/logrusbox/cic-station) — CIC Station control plane: service/API/database/UI, enrollment, authorization, fleet coordination, leases, operational policy, tests, requirements, ADRs, product roadmap, issues, and releases.
+The existing component names remain authoritative. Possible future names such as `fleet-worker` and `fleet-cic` are not adopted.
+
+This repository holds only information that genuinely spans both component repositories or governs Fleet as a whole.
 
 ## This repository owns
 
-- the canonical cross-product program roadmap;
-- cross-product issues whose acceptance requires coordinated work in more than one product repository;
-- program-level decisions that genuinely apply above both product repositories;
+- the canonical Fleet roadmap;
+- cross-component issues whose acceptance requires coordinated work in more than one component repository;
+- Fleet-level decisions that apply above both component repositories;
 - integration milestones and cross-repository dependency/acceptance coordination;
-- concise current program status and governance conventions.
+- concise current Fleet status and governance conventions.
 
 ## This repository does not own
 
-Product-specific implementation work remains in the product repository that implements it. Do not duplicate Vincent or CIC Station requirements, bugs, feature issues, ADRs, source code, release notes, or product roadmaps here merely for visibility.
+Component-specific implementation work remains in the repository that implements it. Do not duplicate Vincent or CIC Station requirements, bugs, feature issues, ADRs, source code, release notes, or component roadmaps here merely for visibility.
 
-If an issue can be completed entirely in one product repository, it belongs there. Cross-product issues should link the authoritative product issues/PRs rather than copying them.
+If an issue can be completed entirely in one component repository, it belongs there. Cross-component issues should link the authoritative component issues and pull requests rather than copying them.
 
 ## Start here
 
@@ -29,6 +31,6 @@ If an issue can be completed entirely in one product repository, it belongs ther
 2. [`docs/STATUS.md`](docs/STATUS.md)
 3. [`docs/GOVERNANCE.md`](docs/GOVERNANCE.md)
 4. [`docs/decisions/README.md`](docs/decisions/README.md)
-5. active issues in this repository
+5. Active issues in this repository
 
-GitHub issues are the active program backlog. GitHub Projects is intentionally not used because the current automation tooling cannot maintain Projects v2 directly without creating a parallel manual planning burden.
+GitHub issues are the active Fleet backlog. GitHub Projects is intentionally not used because the current automation tooling cannot maintain Projects v2 directly without creating a parallel manual planning burden.
