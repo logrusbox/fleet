@@ -5,6 +5,7 @@ Canonical program-level documents:
 - `PROGRAM_ROADMAP.md` — cross-product M0-M8 outcomes and acceptance rules.
 - `STATUS.md` — current cross-product state and immediate coordination priorities.
 - `GOVERNANCE.md` — source-of-truth, issue-placement, metadata, and workflow rules.
+- `GREAT_PARALLEL_WORK.md` — living research and provenance catalog of related systems, reusable code candidates, and independently implementable ideas.
 - `decisions/README.md` — program ADR index.
 
 Product-specific documentation remains authoritative in `logrusbox/vincent` and `logrusbox/cic-station`.
