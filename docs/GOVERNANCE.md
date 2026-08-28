@@ -1,4 +1,4 @@
-# Program Governance
+# Fleet Governance
 
 ## Authority model
 
@@ -6,25 +6,25 @@ Each kind of information has one canonical home.
 
 | Information | Authority |
 |---|---|
-| Vincent product behavior/requirements | `logrusbox/vincent` |
-| CIC Station product behavior/requirements | `logrusbox/cic-station` |
-| Product-specific ADRs | owning product repository |
-| Product-specific bugs/features/tasks | owning product repository issues |
-| Product release targets | owning product repository milestones/roadmap |
-| Product implementation/review evidence | owning product repository PRs/Actions |
-| Cross-product roadmap | `logrusbox/vincent-program/docs/PROGRAM_ROADMAP.md` |
-| Cross-product issues/integration acceptance | `logrusbox/vincent-program` issues |
-| Program-level decisions | program ADRs in this repository |
-| Current cross-product state | `docs/STATUS.md` |
+| Vincent behavior and requirements | `logrusbox/vincent` |
+| CIC Station behavior and requirements | `logrusbox/cic-station` |
+| Component-specific ADRs | owning component repository |
+| Component-specific bugs, features, and tasks | owning component repository issues |
+| Component release targets | owning component repository milestones/roadmap |
+| Component implementation/review evidence | owning component repository pull requests and Actions |
+| Fleet roadmap | `logrusbox/fleet/docs/PROGRAM_ROADMAP.md` |
+| Cross-component issues and integration acceptance | `logrusbox/fleet` issues |
+| Fleet-level decisions | Fleet ADRs in this repository |
+| Current Fleet state | `docs/STATUS.md` |
 
 ## Issue placement rule
 
 Use the narrowest correct owner.
 
 - If one repository can implement and accept the work independently, create the issue there.
-- If acceptance requires coordinated changes or proof across Vincent and CIC Station, create one program issue here and link the product issues/PRs that implement it.
-- Do not copy product issue bodies into a program issue. Summarize the cross-product contract and link to authoritative work.
-- A dependency is a link/relationship, not a duplicated issue.
+- If acceptance requires coordinated changes or proof across Vincent and CIC Station, create one Fleet issue here and link the component issues and pull requests that implement it.
+- Do not copy component issue bodies into a Fleet issue. Summarize the cross-component contract and link to authoritative work.
+- A dependency is a link or relationship, not a duplicated issue.
 
 ## Planning metadata
 
@@ -42,7 +42,7 @@ Recommended labels, when useful:
 - `verification`
 - `blocked`
 
-Product repositories may use more specific workstream labels. Avoid reproducing the entire roadmap in labels.
+Component repositories may use more specific workstream labels. Avoid reproducing the entire roadmap in labels.
 
 ## Work-in-progress discipline
 
@@ -52,11 +52,11 @@ For owner-directed development, normally keep one primary implementation objecti
 
 - `main` is the only permanent branch.
 - Use short-lived branches for bounded changes.
-- Open PRs to `main`.
+- Open pull requests to `main`.
 - Run required CI before integration.
-- Squash merge accepted PRs.
-- Delete merged/superseded branches after useful work is preserved.
-- Program PRs change program documentation/governance only; product code does not belong here.
+- Squash merge accepted pull requests.
+- Delete merged or superseded branches after useful work is preserved.
+- Fleet pull requests change Fleet documentation and governance only; component code does not belong here.
 
 ## GitHub Projects
 
@@ -64,4 +64,4 @@ GitHub Projects v2 is intentionally not part of the authoritative workflow. The 
 
 ## Release and milestone boundaries
 
-Program milestones M0-M8 are integration outcomes, not software versions. Vincent and CIC Station retain independent Semantic Versioning and release milestones in their own repositories.
+Fleet milestones M0-M8 are integration outcomes, not software versions. Vincent and CIC Station retain independent Semantic Versioning and release milestones in their own repositories.
