@@ -16,6 +16,7 @@ The former organization-level GitHub Project was intentionally abandoned because
 
 ## Current program state
 
+- The program repository has been renamed from `vincent-program` to `fleet`.
 - M0 governance/documentation structure is complete in the component repositories and is being consolidated into this Fleet repository for cross-component ownership.
 - Vincent remains the current physical/operational gate: installer/runtime verification and standalone READY/bounded-work proof are prerequisites for the first managed-worker proof.
 - CIC Station implementation may proceed within its accepted product/security/protocol boundaries while avoiding schema decisions that depend on unresolved domain-model work.
@@ -23,11 +24,10 @@ The former organization-level GitHub Project was intentionally abandoned because
 
 ## Immediate coordination priorities
 
-1. Complete the GitHub repository slug rename from `vincent-program` to `fleet`.
-2. Reconcile Vincent and CIC Station documentation so neither component repository claims ownership of the overall Fleet roadmap.
-3. Move only genuinely cross-component open issues here; leave component-specific work where it is.
-4. Keep component-specific releases and milestones in their component repositories.
-5. Complete repository protection/settings where GitHub UI intervention is required.
+1. Reconcile Vincent and CIC Station documentation so neither component repository claims ownership of the overall Fleet roadmap.
+2. Move only genuinely cross-component open issues here; leave component-specific work where it is.
+3. Keep component-specific releases and milestones in their component repositories.
+4. Complete repository protection/settings where GitHub UI intervention is required.
 
 ## Known configuration limitation
 
