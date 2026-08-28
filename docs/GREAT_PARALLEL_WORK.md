@@ -8,9 +8,9 @@ This is research and provenance documentation, not a roadmap or an adoption deci
 
 ## Current direction
 
-Do not commit Fleet to a wholesale Herd fork yet. The present default is a purpose-built CIC Station core focused on ChatGPT connectivity, worker presence, assignments, claims, leases, results, and Vincent control, while selectively reusing clearly licensed code when reuse is smaller and safer than reimplementation.
+Do not commit Fleet to a wholesale fork yet. The present default is a purpose-built CIC Station core focused on ChatGPT connectivity, worker presence, assignments, claims, leases, results, and Vincent control, while selectively reusing clearly licensed code when reuse is smaller and safer than reimplementation.
 
-A bounded Herd fork spike remains a valid evaluation. It should become the product base only if testing shows that its remote-worker, authentication, session, and provider infrastructure saves more work than removing or replacing its unrelated application layers and adding Fleet's missing job/lease model.
+Two bounded fork spikes now merit direct comparison. Harness is the strongest discovered CIC control-plane candidate because it already models runtime hosts, capability matching, claims, renewable leases, lease generations, and stale-completion fencing. Herd remains the strongest remote-worker/session candidate. Neither should become the product base until a spike proves that retained code exceeds the cost of removing unrelated layers and filling Fleet-specific enrollment, identity, ChatGPT, and Vincent gaps.
 
 ## Reuse classifications
 
@@ -88,6 +88,51 @@ No entry authorizes reuse by itself. Before copying code, verify the license at 
 - Possible use: worktree lifecycle algorithms and tests
 - Current classification: Selective reuse candidate
 
+### Harness
+
+- Project: [majiayu000/harness](https://github.com/majiayu000/harness)
+- License observed: MIT
+- Review depth: Deep source inspection at `8904d1bea9509851eb812c3bcf9f1a4d9b7f6b4c`; not built or run
+- Relevant work: persistent runtime-host registration and heartbeat, host lifecycle and draining, capability-based job claims, renewable job leases, lease generations and proofs, idempotent renewal identifiers, expiry, stale-completion rejection, completion evidence, project cache, Codex/Claude/OpenCode adapters, policy, review, observability, and dashboarding
+- Particularly close behavior: host heartbeat is separate from job lease; a worker that loses a lease receives `must_stop`; stale or wrong-generation completion is rejected; lease TTL is bounded and configurable
+- Gaps for Fleet: no Vincent-style worker daemon or outbound enrollment connector was found; the repository exposes server-side runtime-host APIs but not the per-machine installation, one-time marriage, asymmetric worker identity, or ChatGPT-facing relationship CIC requires
+- Risks to verify: its own reliability audit describes historical dual-lease and supervision hazards; determine which remain at the evaluated commit before adopting the scheduler
+- Possible use: first CIC fork spike; alternatively reuse the runtime-host/job-lease model and tests while building Vincent enrollment and transport independently
+- Current classification: Highest-priority fork candidate; selective reuse candidate
+- Decision status: No fork decision accepted
+
+### Paperclip
+
+- Project: [paperclipai/paperclip](https://github.com/paperclipai/paperclip)
+- License observed: MIT
+- Review depth: Deep source inspection at `ad474abece709bdb0db47f83977780e1ce672817`; not built or run
+- Relevant work: central goals, projects, issues, delegation, permissions, approvals, budgets, task dependencies, atomic checkout, execution locks, heartbeat wakeups, orphan recovery, persistent agent sessions, and adapters for several agent runtimes
+- Runner work: the experimental Rust `paperclip-runnerd` implements a WebSocket runner protocol, Codex app-server provider, short-lived connection leases, one-use bootstrap tickets, command idempotency, durable outbox, reconnect/replay, and semantic action authorization
+- Gaps for Fleet: the primary product models an AI company and is much broader than Fleet 1.0; built-in adapters normally execute near the Paperclip server, while the runner's initial supported topology is still intentionally narrow rather than a finished Vincent workstation fleet
+- Possible use: task/context/governance donor and strong reference for a durable Vincent runner protocol; consider a spike, but prefer selective reuse over a wholesale product fork
+- Current classification: Selective reuse candidate; secondary fork candidate
+
+### K-Dense BYOK and Kady
+
+- Project: [K-Dense-AI/k-dense-byok](https://github.com/K-Dense-AI/k-dense-byok)
+- License observed: MIT
+- Review depth: Source and documentation inspection at `7b3e89502176d347117c2e5af38d47bd528d9fb5`; not built or run
+- Terminology: Kady is the research agent inside K-Dense BYOK, not a separate control-plane project
+- Relevant work: ordinary-folder local projects, parallel chat tabs and specialist sub-agents, durable/reconnectable live turns, queued steering messages, provider-neutral OpenRouter/subscription/Ollama selection, MCP tools, project budgets, remote Modal compute, structured workflow templates, and a provenance-rich living lab notebook
+- Gaps for Fleet: single-user local research workspace rather than a central authority for enrolled physical workers, job claims, renewable leases, reassignment, and stale-result fencing
+- Possible use: project workspace and artifact organization, portable provider configuration, run recovery, budget display, auditable work logs, workflow templates, and specialist delegation patterns
+- Current classification: Selective reuse candidate; reference only as a CIC base
+
+### RunDiffusion Agents
+
+- Project: [rundiffusion/RunDiffusion-Agents](https://github.com/rundiffusion/RunDiffusion-Agents)
+- License observed: Apache-2.0
+- Review depth: Source inspection; not deployed or run
+- Relevant work: Docker Compose agent farm, per-tenant isolation, reverse-proxy routes, configuration and version pins, secrets policy, health checks, recovery, and hosted terminal/UI routes for several agent tools
+- Gaps for Fleet: deployment kit for containerized agent services, not a durable job scheduler, workstation enrollment service, or lease authority
+- Possible use: future CIC/Vincent deployment, tenancy, routing, configuration, and recovery reference
+- Current classification: Selective reuse candidate; reference only as a product base
+
 ## Agent runtimes and protocols
 
 ### OpenAI Codex
@@ -110,9 +155,31 @@ No entry authorizes reuse by itself. Before copying code, verify the license at 
 
 - Project: [OpenHands/OpenHands](https://github.com/OpenHands/OpenHands)
 - License observed: MIT
-- Relevant work: sandbox/runtime abstraction, event streams, agent execution, workspace handling
-- Gaps for Fleet: supplies its own agent platform rather than supervising an already authenticated local Codex installation
+- Relevant work: Agent Canvas control-center UI, registry and switching across local/remote/cloud Agent Servers, sandbox/runtime abstraction, event streams, multiple provider agents including Codex, workspace handling, API/client separation, and scheduled or webhook automations
+- Repository note: the separate [OpenHands/agent-canvas](https://github.com/OpenHands/agent-canvas) repository is archived and its work moved into OpenHands
+- Gaps for Fleet: users select backends and operate conversations; the backends are not automatically treated as one schedulable worker pool with assignment/claim leases and stale-result fencing
 - Current classification: Selective reuse candidate; reference only as a product base
+
+### Cotal
+
+- Project: [Cotal-AI/Cotal](https://github.com/Cotal-AI/Cotal)
+- License observed: Apache-2.0
+- Review depth: Deep source inspection at `ae9f61643816ffe544f7e20d9edde2b5fe816c53`; not built or run
+- Relevant work: NATS/JetStream-backed unicast, multicast and anycast messaging; durable delivery, presence, JWT/ACLs, remote managers and manager leases, remote launch specifications, MCP tools, and a Codex app-server connector that can wake idle Codex sessions and steer active ones
+- Delivery behavior: messages are acknowledged only after a successful agent turn, allowing redelivery after failure or restart
+- Gaps for Fleet: durable agent messaging and anycast are not an authoritative work-item/attempt/result lease model; it does not by itself define expiry, reassignment, or acceptance rules for late results
+- Possible use: Vincent-to-CIC transport or protocol donor, especially for Codex app-server integration; adopting it also introduces NATS/JetStream operations
+- Current classification: Selective reuse candidate; possible transport integration
+
+### Scientific Agent Skills
+
+- Project: [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills)
+- License observed: repository MIT; individual skills explicitly carry their own license metadata and must be checked independently
+- Review depth: Repository structure and documentation inspection; individual skills not audited
+- Relevant work: a large, versioned, installable library of `SKILL.md` capability packages compatible with several agent hosts; project/user install scopes, reproducible pinning, metadata, validation, and per-skill attribution
+- Gaps for Fleet: capability content, not worker discovery, scheduling, execution authority, or transport
+- Possible use: define a portable CIC/Vincent capability-package convention and let projects pin approved skills by version; scientific skills themselves are optional project payloads, not CIC core
+- Current classification: Ideas/specifications; selective reuse only after per-skill license review
 
 ### GitHub Agent HQ
 
