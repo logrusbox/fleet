@@ -6,4 +6,4 @@ Component-specific decisions remain in the owning component repository.
 
 ## Index
 
-- `ADR-0001-program-repository-and-authority-boundary.md` — use a dedicated Fleet repository for cross-component planning and integration authority.\n- `ADR-0002-paperclip-foundation-and-upstream-strategy.md` — begin with an upstream-friendly Paperclip fork while retaining Fleet-specific Vincent/CIC control.
+- `ADR-0001-program-repository-and-authority-boundary.md` — use a dedicated Fleet repository for cross-component planning and integration authority.\n- `ADR-0002-paperclip-foundation-and-upstream-strategy.md` — begin with an upstream-friendly Paperclip fork while retaining Fleet-specific Vincent/CIC control.\n- `ADR-0003-modular-replaceable-contracts.md` — define Fleet through modular, replaceable contracts without requiring premature microservices.
