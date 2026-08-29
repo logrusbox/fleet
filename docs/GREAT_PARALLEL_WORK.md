@@ -2,15 +2,15 @@
 
 **Purpose:** Maintain a living catalog of projects that overlap Fleet's goals or solve adjacent problems whose implementations, protocols, or ideas may inform Vincent and CIC Station.
 
-**Last reviewed:** 2026-08-28
+**Last reviewed:** 2026-08-29
 
 This is research and provenance documentation, not a roadmap or an adoption decision. Product requirements remain authoritative in the owning repositories.
 
 ## Current direction
 
-Do not commit Fleet to a wholesale fork yet. The present default is a purpose-built CIC Station core focused on ChatGPT connectivity, worker presence, assignments, claims, leases, results, and Vincent control, while selectively reusing clearly licensed code when reuse is smaller and safer than reimplementation.
+ADR-0002 accepts an upstream-friendly Paperclip fork as Fleet's initial CIC Station application foundation. Fleet will contribute generally useful runner, reliability, adapter, security, test, and documentation improvements upstream while keeping Vincent and Fleet-specific enrollment, machine management, ChatGPT MCP, network policy, and lease/result authority under Fleet control.
 
-Two bounded fork spikes now merit direct comparison. Harness is the strongest discovered CIC control-plane candidate because it already models runtime hosts, capability matching, claims, renewable leases, lease generations, and stale-completion fencing. Herd remains the strongest remote-worker/session candidate. Neither should become the product base until a spike proves that retained code exceeds the cost of removing unrelated layers and filling Fleet-specific enrollment, identity, ChatGPT, and Vincent gaps.
+Harness is the primary scheduler/lease reference and selective donor. Herd is the primary remote-machine/session reference and selective donor. The first foundation gate must prove ChatGPT -> CIC -> Vincent -> Codex -> durable result before Fleet accepts deep divergence from Paperclip. A failed proof reopens the foundation decision.
 
 ## Reuse classifications
 
