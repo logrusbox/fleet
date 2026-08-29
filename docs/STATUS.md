@@ -1,6 +1,6 @@
 # Fleet Status
 
-**Updated:** 2026-08-28
+**Updated:** 2026-08-29
 
 ## Product structure
 
@@ -19,7 +19,7 @@ The former organization-level GitHub Project was intentionally abandoned because
 - The program repository has been renamed from `vincent-program` to `fleet`.
 - M0 governance/documentation structure is complete in the component repositories and is being consolidated into this Fleet repository for cross-component ownership.
 - Vincent remains the current physical/operational gate: installer/runtime verification and standalone READY/bounded-work proof are prerequisites for the first managed-worker proof.
-- CIC Station implementation may proceed within its accepted product/security/protocol boundaries while avoiding schema decisions that depend on unresolved domain-model work.
+- CIC Station's accepted initial foundation is an upstream-friendly Paperclip fork, with generally useful changes contributed upstream and Fleet-specific Vincent/CIC behavior retained under Fleet control.\n- The first foundation gate is a complete ChatGPT-to-CIC-to-Vincent-to-Codex result path; Harness and Herd remain selective donors and fallback evidence.
 - The first managed-worker integration remains a later program gate after Vincent proves standalone operation.
 
 ## Immediate coordination priorities
