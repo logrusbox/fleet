@@ -1,4 +1,4 @@
-# Fleet Program Roadmap
+# Fleet Roadmap
 
 This is the canonical cross-component roadmap for Fleet. Component-specific implementation details remain in the Vincent and CIC Station roadmaps.
 
@@ -9,7 +9,7 @@ This is the canonical cross-component roadmap for Fleet. Component-specific impl
 - **Vincent** is Fleet's managed worker platform.
 - The existing component names remain authoritative; `fleet-cic` and `fleet-worker` are possible future names only.
 
-## Program principles
+## Fleet principles
 
 - Vincent remains a useful standalone worker platform.
 - CIC Station governs managed-fleet enrollment, authorization, assignments, leases, approvals, health, operational configuration, and coordination after explicit enrollment.
@@ -19,7 +19,7 @@ This is the canonical cross-component roadmap for Fleet. Component-specific impl
 - Generic Vincent and CIC Station releases must support independent self-hosted deployments without requiring a Logrus Box-operated rendezvous, registry, pairing, or relay service.
 - Public Internet access is not a prerequisite for Vincent/CIC Station enrollment when the two components have a mutually reachable private network path.
 
-## Program milestones
+## Fleet milestones
 
 | Milestone | Outcome | Current state |
 |---|---|---|
@@ -39,13 +39,15 @@ This is the canonical cross-component roadmap for Fleet. Component-specific impl
 - Keep the large workstation online as the first useful persistent Vincent worker and use it for real development work when practical.
 - Use the old laptop as the expendable physical installer/recovery test target for repeated clean installs and failure-path tests.
 - Do not destroy the productive workstation merely for symmetry; deliberately rebuild it later at the worker-impermanence/recovery acceptance gate.
-- Begin CIC Station from an upstream-friendly Paperclip fork under ADR-0002, subject to the first end-to-end foundation proof; do not make Git the authoritative live lease/heartbeat database.\n- Keep Fleet-specific Vincent/CIC behavior modular, contribute generally useful improvements upstream, and use Harness and Herd selectively for stronger lease and remote-session behavior.\n- Make Fleet-owned interfaces, protocols, and durable data contracts authoritative over imported implementations; use a modular monolith by default and split services only for demonstrated operational boundaries.
+- Begin CIC Station from an upstream-friendly Paperclip fork under ADR-0002, subject to the first end-to-end foundation proof; do not make Git the authoritative live lease/heartbeat database.
+- Keep Fleet-specific Vincent/CIC behavior modular, contribute generally useful improvements upstream, and use Harness and Herd selectively for stronger lease and remote-session behavior.
+- Make Fleet-owned interfaces, protocols, and durable data contracts authoritative over imported implementations; use a modular monolith by default and split services only for demonstrated operational boundaries.
 - Resolve CIC Station work-item/attempt/lease/result modeling and multidimensional worker-state semantics before database schemas harden.
 - Implement managed enrollment from the accepted decentralized model: CIC Station supplies its reachable endpoint plus a single-use bootstrap authorization; Vincent initiates the connection and binds its worker-generated asymmetric identity to that CIC Station.
 - Preserve same-subnet/private-address enrollment and make CIC Station reachability independent from public Internet/provider/package-source availability.
 - Treat CIC Station as the managed operational-policy authority after enrollment, including direct/proxied/restricted network mode and future managed software/source delivery.
 
-## Program planning model
+## Planning model
 
 Fleet deliberately uses ordinary GitHub repositories, issues, pull requests, milestones, labels, and repository Markdown rather than GitHub Projects v2.
 
@@ -53,13 +55,13 @@ Fleet deliberately uses ordinary GitHub repositories, issues, pull requests, mil
 - `logrusbox/vincent` owns Vincent-specific work.
 - `logrusbox/cic-station` owns CIC Station-specific work.
 - Component release targeting uses repository milestones in the relevant component repository.
-- Cross-component program stage uses M0-M8 in this roadmap and, when useful, Fleet issue metadata/labels.
+- Cross-component Fleet stage uses M0-M8 in this roadmap and, when useful, Fleet issue metadata/labels.
 - PRs are implementation/review evidence; issues are planning/work anchors.
 - Do not create duplicate Fleet issues merely to mirror component issues.
 
 ## Cross-component acceptance rules
 
-A program milestone is complete only when:
+A Fleet milestone is complete only when:
 
 1. required implementation exists in the owning component repositories;
 2. automated validation passes;

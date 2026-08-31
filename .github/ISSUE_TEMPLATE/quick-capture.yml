@@ -1,5 +1,5 @@
 name: Quick capture
-about: Capture a cross-product idea or coordination item before full triage
+about: Capture a cross-component idea or Fleet coordination item before full triage
 labels: []
 body:
   - type: textarea
@@ -14,5 +14,5 @@ body:
     attributes:
       label: Scope check
       options:
-        - label: This appears to require both Vincent and CIC Station or applies at program level.
+        - label: This appears to require both Vincent and CIC Station or applies at Fleet level.
           required: false

@@ -1,16 +1,16 @@
-name: Cross-product work
+name: Cross-component work
 about: Work whose acceptance requires coordinated Vincent and CIC Station changes or proof
 labels: []
 body:
   - type: markdown
     attributes:
       value: |
-        Use this repository only for work that genuinely spans both products. Product-specific work belongs in its product repository.
+        Use this repository only for work that genuinely spans both Fleet components. Component-specific work belongs in its owning component repository.
   - type: textarea
     id: outcome
     attributes:
-      label: Program outcome
-      description: What cross-product behavior or result must be achieved?
+      label: Fleet outcome
+      description: What cross-component behavior or result must be achieved?
     validations:
       required: true
   - type: textarea
@@ -30,7 +30,7 @@ body:
   - type: textarea
     id: acceptance
     attributes:
-      label: Cross-product acceptance
+      label: Cross-component acceptance
       description: What evidence proves the coordinated result is complete?
     validations:
       required: true

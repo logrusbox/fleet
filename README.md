@@ -1,8 +1,8 @@
 # Fleet
 
-`logrusbox/fleet` is the program-level coordination repository for **Fleet**, a Logrus Box product for coordinating AI work across managed computers.
+`logrusbox/fleet` is the Fleet-level coordination repository for **Fleet**, a Logrus Box product for coordinating AI work across managed computers.
 
-Fleet currently consists of two programs:
+Fleet currently consists of two components:
 
 - [`logrusbox/vincent`](https://github.com/logrusbox/vincent) — **Vincent**, the managed worker platform.
 - [`logrusbox/cic-station`](https://github.com/logrusbox/cic-station) — **CIC Station**, the Command Information Center and central control plane.
