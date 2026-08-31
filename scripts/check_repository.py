@@ -32,13 +32,13 @@ def main() -> int:
 
     readme = (ROOT / "README.md").read_text(encoding="utf-8") if (ROOT / "README.md").is_file() else ""
     if "logrusbox/vincent" not in readme or "logrusbox/cic-station" not in readme:
-        failures.append("README must identify both product repositories")
+        failures.append("README must identify both component repositories")
 
     if failures:
         for failure in failures:
             print(f"FAIL: {failure}")
         return 1
-    print("VINCENT program repository validation: PASS")
+    print("Fleet repository validation: PASS")
     return 0
 
 if __name__ == "__main__":
