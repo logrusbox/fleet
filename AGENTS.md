@@ -1,10 +1,10 @@
-# VINCENT Program Agent Instructions
+# Fleet Agent Instructions
 
-These instructions apply to work in `logrusbox/vincent-program`.
+These instructions apply to work in `logrusbox/fleet`.
 
 ## Start order
 
-Before consequential program work, read:
+Before consequential Fleet-level work, read:
 
 1. `README.md`
 2. `docs/PROGRAM_ROADMAP.md`
@@ -17,23 +17,23 @@ Then inspect the current authoritative state of `logrusbox/vincent` and/or `logr
 
 ## Authority boundary
 
-- This repository owns cross-product program planning and integration only.
+- This repository owns Fleet-level planning, governance, and cross-component integration only.
 - Vincent-specific requirements, ADRs, issues, implementation, tests, releases, and roadmap belong in `logrusbox/vincent`.
 - CIC Station-specific requirements, ADRs, issues, implementation, tests, releases, and roadmap belong in `logrusbox/cic-station`.
-- Do not duplicate product issues here merely for visibility.
-- If a cross-product issue requires product work, link the authoritative product issue/PR from the program issue.
+- Do not duplicate component issues here merely for visibility.
+- If a cross-component issue requires component work, link the authoritative component issue/PR from the Fleet issue.
 - GitHub Projects v2 is intentionally not required.
 
 ## Workflow
 
 - `main` is the only permanent branch.
-- Use short-lived branches and PRs for normal changes after initial bootstrap.
+- Use short-lived branches and PRs for normal changes.
 - Squash merge accepted PRs.
 - Delete temporary merged/superseded branches after useful work is preserved.
-- Keep program documents concise and derived from current product-repository authority rather than copying product documentation wholesale.
+- Keep Fleet documents concise and derived from current component-repository authority rather than copying component documentation wholesale.
 
 ## Safety
 
 - Never commit credentials, private keys, tokens, authentication caches, private fleet data, production configuration, or private operational data.
 - Do not use this repository as a live fleet database, task execution system, or secret transport.
-- Consequential product architecture belongs in the owning product ADRs unless the decision genuinely spans both products.
+- Consequential component architecture belongs in the owning component ADRs unless the decision genuinely spans Fleet.
