@@ -11,6 +11,7 @@ Purpose: concise audit index for the current Fleet ChatGPT Project history recon
 |---|---|---|---|---|---|
 | 2026-08-25 | Fleet continuation after Vincent/Mission Control split | worker/control-plane split; GitBoy/codex-worker-platform retirement; migration | **RECONCILED** — later merged repository migration and authority work supersedes chat planning | Vincent migration/consolidation history; Fleet `REPOSITORIES.md`; current product boundary | Yes |
 | 2026-08-26 | Vincent ISO Rebuild and Repository Continuation — Do the Work | ISO rebuild; installer acceptance; identity/enrollment; heartbeat/lease; crash/power recovery | **RECONCILED** — implementation/test chronology is stronger than chat intent | Vincent PR #2, later PR #26, current requirements/status/history; physical-test gates retained | Yes |
+| 2026-08-26 | Continue ISO testing | builds 0011–0021.2; inspection/tooling fixes; physical laptop/workstation testing; Wi-Fi/DNS/bootstrap failures; stop pending documentation rework | **RECONCILED — HISTORICAL evidence** | Vincent PR #55; `docs/history/ISO_TESTING_2026-08.md`; later carried-forward regressions remain authoritative in Vincent `docs/STATUS.md` and current issues | Yes |
 | 2026-08-26 | Mission Control repository/runtime discussions | private repository versus runtime/service; Vincent/control-plane boundary | **RECONCILED** — old repository model is historical | CIC PR #10/#11 and later Fleet authority; current source/operational-state boundary | Yes |
 | 2026-08-27 | CIC-station QA review and cleanup approval | operator auth, TLS, worker trust, protocol safety, approvals, lease clocks | **RECONCILED** | CIC PRs #15/#16/#20/#23/#24 plus current requirements/issues | Yes |
 | 2026-08-27 | Vincent QA review and cleanup approval | installer/runtime gates; provider boundary; execution/authorization; identity/protocol | **RECONCILED** | Vincent PRs #32/#33/#34/#46 and current requirements; deferred shared GitHub Project preserved in Fleet issue #15 | Yes |
@@ -31,7 +32,7 @@ Purpose: concise audit index for the current Fleet ChatGPT Project history recon
 | 2026-08-28 | Fleet VPS Requirements | CIC deployment sizing; VPS allocation | **RECONCILED** | ADR-0003 preserves smallest-practical self-hosted topology; owner-specific VPS allocation intentionally not public project truth | Yes |
 | 2026-08-31 | Project Status Update | overall project status | **RECONCILED** — transient status superseded | `CURRENT_STATE.md` verified 2026-09-11 plus current component status/issues | Yes |
 | 2026-09-03 | Assessing PAIR Impact | NVIDIA Personal AI Router impact | **RECONCILED — FUTURE EVALUATION** | Fleet PR #14; `docs/evaluations/NVIDIA_PAIR.md` | Yes |
-| 2026-09-11 | Fleet Project — Full Conversation History Reconciliation | Project-wide durable-memory audit | **RECONCILED** | this ledger, Fleet PRs #11/#13/#14/#16 and this completion change | Yes |
+| 2026-09-11 | Fleet Project — Full Conversation History Reconciliation | Project-wide durable-memory audit | **RECONCILED** | this ledger, Fleet PRs #11/#13/#14/#16/#17 plus Vincent PR #55 and this final ledger update | Yes |
 
 ## Durable knowledge confirmed or recovered
 
@@ -42,7 +43,8 @@ Reconciliation added only material that was genuinely missing:
 - `docs/evaluations/POST_1_0_FEATURE_EVALUATIONS.md` — broader scheduling, worker lifecycle/power, worktree/review/UI, NAT/LAN/CIC-proxy and related post-1.0 ideas, explicitly non-current;
 - K-Dense Scientific Agent Skills/BYOK future-evaluation material via Fleet PR #13;
 - NVIDIA PAIR future-evaluation material via Fleet PR #14;
-- deferred shared GitHub Project planning direction via Fleet issue #15.
+- deferred shared GitHub Project planning direction via Fleet issue #15;
+- Vincent August 2026 ISO build/physical-test evidence and durable lessons via Vincent PR #55 in `docs/history/ISO_TESTING_2026-08.md`.
 
 No reviewed thread establishes a later accepted decision that conflicts with current authoritative Git. Historical private-repository arrangements, temporary workstream branches, obsolete Git-polling orchestration, build-specific intermediate state, and broad Mission Control scope were not restored.
 
