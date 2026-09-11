@@ -77,9 +77,9 @@ Immediate CIC Station gates remain:
 
 The current cross-component backlog in `logrusbox/fleet` includes:
 
+- issue #1 — shared repository-governance enforcement;
 - issue #2 — M3 first managed Vincent worker proof;
-- issue #3 — native component release milestones requiring GitHub UI work;
-- issue #1 — shared repository-governance enforcement; its historical `vincent-program` terminology should be treated as stale wording, not current authority.
+- issue #3 — native component release milestones requiring GitHub UI work.
 
 The Fleet roadmap remains M0-M8. M0 governance/documentation establishment is complete; M1 physical Vincent proof is in progress; later milestones remain planned.
 
