@@ -1,36 +1,12 @@
 # Fleet Status
 
-**Updated:** 2026-08-31
+The canonical cross-component current-state document is now [`../CURRENT_STATE.md`](../CURRENT_STATE.md).
 
-## Product structure
+This path is retained as a compatibility pointer for older links and repository history. Do not maintain a second Fleet status narrative here.
 
-**Fleet** is the product maintained by Logrus Box:
+Component-specific temporary/current implementation state remains authoritative in:
 
-- `logrusbox/vincent` — Vincent managed worker platform.
-- `logrusbox/cic-station` — CIC Station Command Information Center and control plane.
-- `logrusbox/fleet` — Fleet-wide planning, integration, and governance only.
+- `logrusbox/vincent/docs/STATUS.md`
+- `logrusbox/cic-station/docs/STATUS.md`
 
-Vincent and CIC Station remain the current component names. Possible names such as `fleet-worker` and `fleet-cic` are deferred and have not been adopted.
-
-The former organization-level GitHub Project was intentionally abandoned because the connected automation could not maintain Projects v2 state directly. Active planning uses normal GitHub issues, pull requests, labels, milestones, and repository Markdown.
-
-## Current Fleet state
-
-- The Fleet coordination repository was renamed from `vincent-program` to `fleet`.
-- M0 governance/documentation structure is complete in the component repositories and consolidated here for Fleet-wide and cross-component ownership.
-- Vincent remains the current physical/operational gate: installer/runtime verification and standalone READY/bounded-work proof are prerequisites for the first managed-worker proof.
-- CIC Station's accepted initial foundation is an upstream-friendly Paperclip fork, with generally useful changes contributed upstream and Fleet-specific Vincent/CIC behavior retained under Fleet control.
-- ADR-0003 requires replaceable module contracts across CIC, Vincent, agent runtimes, transports, scheduling, storage, policy, sources, skills, and interfaces while explicitly avoiding premature microservice decomposition.
-- The first foundation gate is a complete ChatGPT-to-CIC-to-Vincent-to-Codex result path; Harness and Herd remain selective donors and fallback evidence.
-- The first managed-worker integration remains a later Fleet gate after Vincent proves standalone operation.
-
-## Immediate coordination priorities
-
-1. Keep Vincent and CIC Station documentation aligned so neither component repository claims ownership of the overall Fleet roadmap.
-2. Move only genuinely cross-component open issues here; leave component-specific work where it is.
-3. Keep component-specific releases and milestones in their component repositories.
-4. Complete repository protection/settings where GitHub UI intervention is required.
-
-## Known configuration limitation
-
-The connected GitHub automation can manage repository contents, issues, pull requests, branches, and Actions, but cannot rename repositories, create repository rulesets, change merge-method settings, create milestones/labels directly, or manage GitHub Projects v2. Those settings remain explicit GitHub UI tasks when needed.
+Fleet roadmap state remains in [`PROGRAM_ROADMAP.md`](PROGRAM_ROADMAP.md).
