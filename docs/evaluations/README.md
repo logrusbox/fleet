@@ -4,6 +4,11 @@ This directory is for concepts that may be worth revisiting but are not current 
 
 Use it to preserve useful historical design work without silently expanding Fleet 1.0.
 
+## Current evaluation records
+
+- `POST_1_0_FEATURE_EVALUATIONS.md` — broader post-1.0 concepts recovered from earlier Fleet planning.
+- `NVIDIA_PAIR.md` — NVIDIA Personal AI Router as a possible future local-inference backend or selective donor; not a Fleet 1.0 dependency.
+
 ## Status vocabulary
 
 - **FUTURE EVALUATION** — potentially useful, not accepted current scope.
