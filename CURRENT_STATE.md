@@ -1,7 +1,7 @@
 # Fleet Current State
 
-**Verified against current default branches:** 2026-09-11  
-**Component status documents last updated:** 2026-08-31
+**Verified against current default branches:** 2026-09-25
+**Rescan:** current default branches, open issues/PRs, and Actions results checked on 2026-09-25; no open PRs at rescan start.
 
 This document is the concise cross-component state needed for project re-entry. Component-specific implementation detail remains authoritative in the owning repository.
 
@@ -44,7 +44,7 @@ Current accepted state from `logrusbox/vincent` includes:
 
 Immediate Vincent gates remain:
 
-1. prove exact-`main` build-0023 ISO and physical installer/runtime behavior;
+1. complete physical installer/runtime acceptance; build-0023 ISO construction and inspection passed on `1f440a8c332374d15974939a20caaf70a898968a` ([run 34644256063](https://github.com/logrusbox/vincent/actions/runs/34644256063));
 2. complete offline-first payload and standalone READY behavior;
 3. close pre-1.0 provider-boundary, authorization, execution-bounding, and credential-isolation blockers;
 4. execute carried-forward laptop/workstation physical regression tests.
@@ -79,7 +79,8 @@ The current cross-component backlog in `logrusbox/fleet` includes:
 
 - issue #1 — shared repository-governance enforcement;
 - issue #2 — M3 first managed Vincent worker proof;
-- issue #3 — native component release milestones requiring GitHub UI work.
+- issue #3 — native component release milestones requiring GitHub UI work;
+- issue #15 — deferred evaluation of an optional organization Project; repository issues remain authoritative and Project setup retains its explicit owner gate.
 
 The Fleet roadmap remains M0-M8. M0 governance/documentation establishment is complete; M1 physical Vincent proof is in progress; later milestones remain planned.
 
