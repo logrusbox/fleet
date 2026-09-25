@@ -16,3 +16,11 @@ The initial path must demonstrate bounded work, interruption/failure handling, d
 ## Authority
 
 Concrete runtime implementation belongs in `logrusbox/vincent`. Cross-component task/result contracts belong to the relevant Fleet/CIC/Vincent decisions.
+
+## September 25 evidence
+
+Vincent's supervisor now uses provider-neutral execution results with explicit
+deadlines/cancellation. Optional Codex installation verifies reviewed local
+artifacts before activation. No provider login or real model invocation was
+performed. Full lifecycle abstraction and task/provider credential isolation
+remain open component issues #38 and #48.
