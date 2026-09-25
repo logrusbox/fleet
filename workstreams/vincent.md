@@ -21,3 +21,11 @@ Vincent is Fleet's managed worker platform and must also remain useful when it i
 ## Authority boundary
 
 Installer, runtime, networking, diagnostics, update, provider-adapter, and physical-test details remain authoritative in `logrusbox/vincent`. This file records only Fleet-visible integration state.
+
+## September 25 implementation update
+
+Offline payload/local READY, bounded provider invocation, publication recovery,
+repository grant enforcement, reviewed local provider installation and independent
+runtime/installer provenance are implemented with automated tests. Physical
+acceptance, task credential isolation and authenticated CIC integration remain
+open. Component `docs/STATUS.md` is the detailed evidence authority.
