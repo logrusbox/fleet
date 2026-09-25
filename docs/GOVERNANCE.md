@@ -15,7 +15,7 @@ Each kind of information has one canonical home.
 | Fleet roadmap | `logrusbox/fleet/docs/PROGRAM_ROADMAP.md` |
 | Cross-component issues and integration acceptance | `logrusbox/fleet` issues |
 | Fleet-level decisions | Fleet ADRs in this repository |
-| Current Fleet state | `docs/STATUS.md` |
+| Current Fleet state | `CURRENT_STATE.md` (`docs/STATUS.md` is a compatibility pointer) |
 
 ## Issue placement rule
 

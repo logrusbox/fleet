@@ -21,7 +21,7 @@ Cross-component issues should link their authoritative component issues/PRs rath
 ## Documentation ownership
 
 - Fleet roadmap: `docs/PROGRAM_ROADMAP.md`
-- Fleet status: `docs/STATUS.md`
+- Fleet status: `CURRENT_STATE.md`
 - Fleet governance/authority: `docs/GOVERNANCE.md`
 - Fleet-level consequential decisions: `docs/decisions/`
 
